@@ -175,6 +175,12 @@ function covidDB() {
 
 async function Covid() {
 
+    influxdb.getDatabaseNames().then(names => {
+        if (!names.includes('covid19')) {
+            influxdb.createDatabase('covid19');
+        }
+    })
+
     const result = await getCovid();
     covidDB()
 
