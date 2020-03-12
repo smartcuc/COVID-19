@@ -1,0 +1,30 @@
+{
+  "name": "covid-19",
+  "version": "1.0.0",
+  "description": "Download COVID-19 data, convert and load them into an influxDB.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "COVID-19",
+    "Corona",
+    "influxdb"
+  ],
+  "author": "Ruediger Koenen",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "influx": "^5.5.1",
+    "package.json": "^2.0.1",
+    "papaparse": "^5.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartcuc/COVID-19.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smartcuc/COVID-19/issues"
+  },
+  "homepage": "https://github.com/smartcuc/COVID-19#readme"
+}
