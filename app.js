@@ -4,7 +4,7 @@ const influx = require('influx');
 const axios = require('axios');
 
 const influxdb = new influx.InfluxDB({
-    host: 'plc.iotzation.de',
+    host: 'localhost',
     port: 8086,
     database: 'covid19',
     pool: {
