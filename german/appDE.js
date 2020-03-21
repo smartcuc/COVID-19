@@ -165,9 +165,9 @@ function csvDB() {
                         region: regionDB,
                     },
                     fields: {
-                        Confirmed: data[0][1],
-                        Deaths: data[0][3],
-                        Recovered: data[0][2],
+                        Confirmed: data[0][1].split('.').join(""),
+                        Deaths: data[0][3].split('.').join(""),
+                        Recovered: data[0][2].split('.').join(""),
                     },
                     timestamp: new Date(tsDataGermany[2] + '-' + tsDataGermany[1] + '-' + tsDataGermany[0] + "T" + tsDataGermany[3] + ":00:00").getTime()
                 });
