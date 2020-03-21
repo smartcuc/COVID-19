@@ -132,7 +132,7 @@ function csvDB() {
 
     for (let i = 0; i < dbData.length; i++) {
 
-        for (let j = 1; j < dbData[i].length; j++) {
+        for (let j = 0; j < dbData[i].length; j++) {
 
             data = Papa.parse(dbData[i][j]).data;
 
