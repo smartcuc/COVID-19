@@ -1,0 +1,15 @@
+image:
+  repository: hajowieland/covid19influx
+  tag: latest
+  pullPolicy: Always
+
+resources:
+  limits:
+   cpu: 500m
+   memory: 512Mi
+  requests:
+   cpu: 100m
+   memory: 128Mi
+
+schedule: "0 02,08,14,20 * * *" # Run four times daily: 02:00, 08:00, 14:00, 20:00
+influxHost: "influxdb.default"

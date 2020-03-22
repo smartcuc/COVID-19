@@ -1,0 +1,11 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm chart for COVID-19 influxdb Cronjob
+name: covid19influx
+version: 0.1.0
+keywords:
+- covid19
+- influx
+maintainers:
+- email: mail@wieland.tech
+home: https://github.com/smartcuc/COVID-19
