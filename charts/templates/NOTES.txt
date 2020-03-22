@@ -1,0 +1,1 @@
+covid19influx Cronjob deployed
