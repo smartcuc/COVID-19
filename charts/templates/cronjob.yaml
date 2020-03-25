@@ -1,0 +1,36 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "covid19influx.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "covid19influx.name" . }}
+    helm.sh/chart: {{ include "covid19influx.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  schedule: {{ .Values.schedule | quote }}
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "covid19influx.name" . }}
+        helm.sh/chart: {{ include "covid19influx.chart" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        cronjob: {{ include "covid19influx.fullname" . }}
+    spec:
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: {{ include "covid19influx.name" . }}
+            helm.sh/chart: {{ include "covid19influx.chart" . }}
+            app.kubernetes.io/instance: {{ .Release.Name }}
+        spec:
+          containers:
+          - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            name: covid19cronjob
+            env:
+            - name: INFLUX_HOST
+              value: "{{ .Values.influxHost }}"
+          restartPolicy: Never
+  successfulJobsHistoryLimit: 3

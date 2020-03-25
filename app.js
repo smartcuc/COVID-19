@@ -1,4 +1,3 @@
-
 const papa = require('papaparse');
 const influx = require('influx');
 const axios = require('axios');
@@ -8,8 +7,11 @@ const axiosDefaultConfig = {
     httpsAgent: new HttpsProxyAgent('http://XXXX:XXXX@XXXX:XXXX')
 };
 
+// Get INFLUX_HOST environment variable
+const influxhost = process.env.INFLUX_HOST;
+
 const influxdb = new influx.InfluxDB({
-    host: 'localhost',
+    host: influxhost,
     port: 8086,
     database: 'covid19',
     pool: {
@@ -36,7 +38,7 @@ const influxdb = new influx.InfluxDB({
 });
 
 
-const statType = ['Confirmed', 'Deaths', 'Recovered'];
+const statType = ['Confirmed', 'Deaths'];
 
 let covidConfirmed;
 let covidDeaths;
@@ -44,7 +46,7 @@ let covidRecovered;
 
 function getCovidData(item) {
     const axios = require ('axios').create(axiosDefaultConfig);
-    const url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-" + item + ".csv";
+    const url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid_" + item.toLowerCase() + "_global.csv";
     return axios.get(url);
 }
 
@@ -115,7 +117,6 @@ function covidDB() {
 
         const zeilenConfirmed = Object.entries(covidConfirmed[i]);
         const zeilenDeaths = Object.entries(covidDeaths[i]);
-        const zeilenRecovered = Object.entries(covidRecovered[i]);
 
         let state = zeilenConfirmed[0][1];
         let country = zeilenConfirmed[1][1];
@@ -129,12 +130,10 @@ function covidDB() {
         for (let j = 4; j < anzahlEintrag; j++) {
             let zeileConfirmed = Object.values(zeilenConfirmed[j])
             let zeileDeaths = Object.values(zeilenDeaths[j])
-            let zeileRecovered = Object.values(zeilenRecovered[j])
 
             let timestemp = zeileConfirmed[0];
             let confirmed = zeileConfirmed[1];
             let deaths = zeileDeaths[1];
-            let recovered = zeileRecovered[1];
 
             if (confirmed == undefined) {
                 confirmed = Object.values(zeilenConfirmed[j - 1])[1];
@@ -143,9 +142,7 @@ function covidDB() {
             if (deaths == undefined) {
                 deaths = Object.values(zeilenDeaths[j - 1])[1];
             }
-            if (recovered == undefined) {
-                recovered = Object.values(zeilenRecovered[j - 1])[1];
-            }
+
             series.push(
                 {
                     measurement: 'Corona',
@@ -158,7 +155,6 @@ function covidDB() {
                     fields: {
                         Confirmed: confirmed,
                         Deaths: deaths,
-                        Recovered: recovered,
                     },
                     timestamp: timestemp
                 });
