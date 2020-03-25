@@ -1,6 +1,11 @@
 const papa = require('papaparse');
 const influx = require('influx');
 const axios = require('axios');
+const HttpsProxyAgent = require('https-proxy-agent');
+const axiosDefaultConfig = {
+    proxy: false,
+    httpsAgent: new HttpsProxyAgent('http://XXXX:XXXX@XXXX:XXXX')
+};
 
 // Get INFLUX_HOST environment variable
 const influxhost = process.env.INFLUX_HOST;
@@ -40,9 +45,8 @@ let covidDeaths;
 let covidRecovered;
 
 function getCovidData(item) {
-    
+    const axios = require ('axios').create(axiosDefaultConfig);
     const url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_" + item.toLowerCase() + "_global.csv";
-
     return axios.get(url);
 }
 
