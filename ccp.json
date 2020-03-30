@@ -1,0 +1,1502 @@
+[
+    {
+        "country_name": "Aruba",
+        "country_code": "ABW",
+        "population_2018": 105845,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Afghanistan",
+        "country_code": "AFG",
+        "population_2018": 37172386,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Angola",
+        "country_code": "AGO",
+        "population_2018": 30809762,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Albania",
+        "country_code": "AIA",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Andorra",
+        "country_code": "ALA",
+        "population_2018": "0",
+        "region": "Europe"
+    },
+    {
+        "country_name": "Albania",
+        "country_code": "ALB",
+        "population_2018": 2866376,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Andorra",
+        "country_code": "AND",
+        "population_2018": 77006,
+        "region": "Europe"
+    },
+    {
+        "country_name": "United Arab Emirates",
+        "country_code": "ARE",
+        "population_2018": 9630959,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Argentina",
+        "country_code": "ARG",
+        "population_2018": 44494502,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Armenia",
+        "country_code": "ARM",
+        "population_2018": 2951776,
+        "region": "Asia"
+    },
+    {
+        "country_name": "American Samoa",
+        "country_code": "ASM",
+        "population_2018": 55465,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "",
+        "country_code": "ATF",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "Antigua and Barbuda",
+        "country_code": "ATG",
+        "population_2018": 96286,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Australia",
+        "country_code": "AUS",
+        "population_2018": 24992369,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Austria",
+        "country_code": "AUT",
+        "population_2018": 8847037,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Azerbaijan",
+        "country_code": "AZE",
+        "population_2018": 9942334,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Burundi",
+        "country_code": "BDI",
+        "population_2018": 11175378,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Belgium",
+        "country_code": "BEL",
+        "population_2018": 11422068,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Benin",
+        "country_code": "BEN",
+        "population_2018": 11485048,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "BES",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Burkina Faso",
+        "country_code": "BFA",
+        "population_2018": 19751535,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Bangladesh",
+        "country_code": "BGD",
+        "population_2018": 161356039,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Bulgaria",
+        "country_code": "BGR",
+        "population_2018": 7024216,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Bahrain",
+        "country_code": "BHR",
+        "population_2018": 1569439,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Bahamas",
+        "country_code": "BHS",
+        "population_2018": 385640,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Bosnia and Herzegovina",
+        "country_code": "BIH",
+        "population_2018": 3323929,
+        "region": "Europe"
+    },
+    {
+        "country_name": "",
+        "country_code": "BLM",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Belarus",
+        "country_code": "BLR",
+        "population_2018": 9485386,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Belize",
+        "country_code": "BLZ",
+        "population_2018": 383071,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Bermuda",
+        "country_code": "BMU",
+        "population_2018": 63968,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Bolivia",
+        "country_code": "BOL",
+        "population_2018": 11353142,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Brazil",
+        "country_code": "BRA",
+        "population_2018": 209469333,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Barbados",
+        "country_code": "BRB",
+        "population_2018": 286641,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Brunei Darussalam",
+        "country_code": "BRN",
+        "population_2018": 428962,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Bhutan",
+        "country_code": "BTN",
+        "population_2018": 754394,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "BVT",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Botswana",
+        "country_code": "BWA",
+        "population_2018": 2254126,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Central African Republic",
+        "country_code": "CAF",
+        "population_2018": 4666377,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Canada",
+        "country_code": "CAN",
+        "population_2018": 37058856,
+        "region": "Americas"
+    },
+    {
+        "country_name": "",
+        "country_code": "CCK",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Switzerland",
+        "country_code": "CHE",
+        "population_2018": 8516543,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Channel Islands",
+        "country_code": "CHI",
+        "population_2018": 170499,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Chile",
+        "country_code": "CHL",
+        "population_2018": 18729160,
+        "region": "Americas"
+    },
+    {
+        "country_name": "China",
+        "country_code": "CHN",
+        "population_2018": 1392730000,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Cote d'Ivoire",
+        "country_code": "CIV",
+        "population_2018": 25069229,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Cameroon",
+        "country_code": "CMR",
+        "population_2018": 25216237,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Congo (the Democratic Republic of the)",
+        "country_code": "COD",
+        "population_2018": 84068091,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Congo",
+        "country_code": "COG",
+        "population_2018": 5244363,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "COK",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Colombia",
+        "country_code": "COL",
+        "population_2018": 49648685,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Comoros",
+        "country_code": "COM",
+        "population_2018": 832322,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Cabo Verde",
+        "country_code": "CPV",
+        "population_2018": 543767,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Costa Rica",
+        "country_code": "CRI",
+        "population_2018": 4999441,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Cuba",
+        "country_code": "CUB",
+        "population_2018": 11338138,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Curacao",
+        "country_code": "CUW",
+        "population_2018": 159849,
+        "region": "Americas"
+    },
+    {
+        "country_name": "",
+        "country_code": "CXR",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Cayman Islands",
+        "country_code": "CYM",
+        "population_2018": 64174,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Cyprus",
+        "country_code": "CYP",
+        "population_2018": 1189265,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Czech Republic",
+        "country_code": "CZE",
+        "population_2018": 10625695,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Germany",
+        "country_code": "DEU",
+        "population_2018": 82927922,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Djibouti",
+        "country_code": "DJI",
+        "population_2018": 958920,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Dominica",
+        "country_code": "DMA",
+        "population_2018": 71625,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Denmark",
+        "country_code": "DNK",
+        "population_2018": 5797446,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Dominican Republic",
+        "country_code": "DOM",
+        "population_2018": 10627165,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Algeria",
+        "country_code": "DZA",
+        "population_2018": 42228429,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Ecuador",
+        "country_code": "ECU",
+        "population_2018": 17084357,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Egypt",
+        "country_code": "EGY",
+        "population_2018": 98423595,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Eritrea",
+        "country_code": "ERI",
+        "population_2018": 0,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "ESH",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "Spain",
+        "country_code": "ESP",
+        "population_2018": 46723749,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Estonia",
+        "country_code": "EST",
+        "population_2018": 1320884,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Ethiopia",
+        "country_code": "ETH",
+        "population_2018": 109224559,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Finland",
+        "country_code": "FIN",
+        "population_2018": 5518050,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Fiji",
+        "country_code": "FJI",
+        "population_2018": 883483,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "",
+        "country_code": "FLK",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "France",
+        "country_code": "FRA",
+        "population_2018": 66987244,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Faroe Islands",
+        "country_code": "FRO",
+        "population_2018": 48497,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Micronesia, Fed. Sts.",
+        "country_code": "FSM",
+        "population_2018": 112640,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Gabon",
+        "country_code": "GAB",
+        "population_2018": 2119275,
+        "region": "Africa"
+    },
+    {
+        "country_name": "United Kingdom",
+        "country_code": "GBR",
+        "population_2018": 66488991,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Georgia",
+        "country_code": "GEO",
+        "population_2018": 3731000,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Guernsey",
+        "country_code": "GGY",
+        "population_2018": "0",
+        "region": "Europe"
+    },
+    {
+        "country_name": "Ghana",
+        "country_code": "GHA",
+        "population_2018": 29767108,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Gibraltar",
+        "country_code": "GIB",
+        "population_2018": 33718,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Guinea",
+        "country_code": "GIN",
+        "population_2018": 12414318,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Guadeloupe",
+        "country_code": "GLP",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Gambia",
+        "country_code": "GMB",
+        "population_2018": 2280102,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Guinea-Bissau",
+        "country_code": "GNB",
+        "population_2018": 1874309,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Equatorial Guinea",
+        "country_code": "GNQ",
+        "population_2018": 1308974,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Greece",
+        "country_code": "GRC",
+        "population_2018": 10727668,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Grenada",
+        "country_code": "GRD",
+        "population_2018": 111454,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Greenland",
+        "country_code": "GRL",
+        "population_2018": 56025,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Guatemala",
+        "country_code": "GTM",
+        "population_2018": 17247807,
+        "region": "Americas"
+    },
+    {
+        "country_name": "French Guiana",
+        "country_code": "GUF",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Guam",
+        "country_code": "GUM",
+        "population_2018": 165768,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Guyana",
+        "country_code": "GUY",
+        "population_2018": 779004,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Hong Kong",
+        "country_code": "HKG",
+        "population_2018": 7451000,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "HMD",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Honduras",
+        "country_code": "HND",
+        "population_2018": 9587522,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Croatia",
+        "country_code": "HRV",
+        "population_2018": 4089400,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Haiti",
+        "country_code": "HTI",
+        "population_2018": 11123176,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Hungary",
+        "country_code": "HUN",
+        "population_2018": 9768785,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Indonesia",
+        "country_code": "IDN",
+        "population_2018": 267663435,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Isle of Man",
+        "country_code": "IMN",
+        "population_2018": 84077,
+        "region": "Europe"
+    },
+    {
+        "country_name": "India",
+        "country_code": "IND",
+        "population_2018": 1352617328,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "IOT",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "Ireland",
+        "country_code": "IRL",
+        "population_2018": 4853506,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Iran, Islamic Rep.",
+        "country_code": "IRN",
+        "population_2018": 81800269,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Iraq",
+        "country_code": "IRQ",
+        "population_2018": 38433600,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Iceland",
+        "country_code": "ISL",
+        "population_2018": 353574,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Israel",
+        "country_code": "ISR",
+        "population_2018": 8883800,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Italy",
+        "country_code": "ITA",
+        "population_2018": 60431283,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Jamaica",
+        "country_code": "JAM",
+        "population_2018": 2934855,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Jersey",
+        "country_code": "JEY",
+        "population_2018": "0",
+        "region": "Europe"
+    },
+    {
+        "country_name": "Jordan",
+        "country_code": "JOR",
+        "population_2018": 9956011,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Japan",
+        "country_code": "JPN",
+        "population_2018": 126529100,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Kazakhstan",
+        "country_code": "KAZ",
+        "population_2018": 18276499,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Kenya",
+        "country_code": "KEN",
+        "population_2018": 51393010,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Kyrgyzstan",
+        "country_code": "KGZ",
+        "population_2018": 6315800,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Cambodia",
+        "country_code": "KHM",
+        "population_2018": 16249798,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Kiribati",
+        "country_code": "KIR",
+        "population_2018": 115847,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Saint Kitts and Nevis",
+        "country_code": "KNA",
+        "population_2018": 52441,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Korea, Rep.",
+        "country_code": "KOR",
+        "population_2018": 51635256,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Kuwait",
+        "country_code": "KWT",
+        "population_2018": 4137309,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Lao PDR",
+        "country_code": "LAO",
+        "population_2018": 7061507,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Lebanon",
+        "country_code": "LBN",
+        "population_2018": 6848925,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Liberia",
+        "country_code": "LBR",
+        "population_2018": 4818977,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Libya",
+        "country_code": "LBY",
+        "population_2018": 6678567,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Saint Lucia",
+        "country_code": "LCA",
+        "population_2018": 181889,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Liechtenstein",
+        "country_code": "LIE",
+        "population_2018": 37910,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Sri Lanka",
+        "country_code": "LKA",
+        "population_2018": 21670000,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Lesotho",
+        "country_code": "LSO",
+        "population_2018": 2108132,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Lithuania",
+        "country_code": "LTU",
+        "population_2018": 2789533,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Luxembourg",
+        "country_code": "LUX",
+        "population_2018": 607728,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Latvia",
+        "country_code": "LVA",
+        "population_2018": 1926542,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Macao SAR, China",
+        "country_code": "MAC",
+        "population_2018": 631636,
+        "region": "Asia"
+    },
+    {
+        "country_name": "St. Martin (French part)",
+        "country_code": "MAF",
+        "population_2018": 37264,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Morocco",
+        "country_code": "MAR",
+        "population_2018": 36029138,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Monaco",
+        "country_code": "MCO",
+        "population_2018": 38682,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Moldova",
+        "country_code": "MDA",
+        "population_2018": 3545883,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Madagascar",
+        "country_code": "MDG",
+        "population_2018": 26262368,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Maldives",
+        "country_code": "MDV",
+        "population_2018": 515696,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Mexico",
+        "country_code": "MEX",
+        "population_2018": 126190788,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Marshall Islands",
+        "country_code": "MHL",
+        "population_2018": 58413,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "North Macedonia",
+        "country_code": "MKD",
+        "population_2018": 2082958,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Mali",
+        "country_code": "MLI",
+        "population_2018": 19077690,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Malta",
+        "country_code": "MLT",
+        "population_2018": 483530,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Myanmar",
+        "country_code": "MMR",
+        "population_2018": 53708395,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Montenegro",
+        "country_code": "MNE",
+        "population_2018": 622345,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Mongolia",
+        "country_code": "MNG",
+        "population_2018": 3170208,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Northern Mariana Islands",
+        "country_code": "MNP",
+        "population_2018": 56882,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Mozambique",
+        "country_code": "MOZ",
+        "population_2018": 29495962,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Mauritania",
+        "country_code": "MRT",
+        "population_2018": 4403319,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "MSR",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Martinique",
+        "country_code": "MTQ",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Mauritius",
+        "country_code": "MUS",
+        "population_2018": 1265303,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Malawi",
+        "country_code": "MWI",
+        "population_2018": 18143315,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Malaysia",
+        "country_code": "MYS",
+        "population_2018": 31528585,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Mayotte",
+        "country_code": "MYT",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "Namibia",
+        "country_code": "NAM",
+        "population_2018": 2448255,
+        "region": "Africa"
+    },
+    {
+        "country_name": "New Caledonia",
+        "country_code": "NCL",
+        "population_2018": 284060,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Niger",
+        "country_code": "NER",
+        "population_2018": 22442948,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "NFK",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Nigeria",
+        "country_code": "NGA",
+        "population_2018": 195874740,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Nicaragua",
+        "country_code": "NIC",
+        "population_2018": 6465513,
+        "region": "Americas"
+    },
+    {
+        "country_name": "",
+        "country_code": "NIU",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Netherlands",
+        "country_code": "NLD",
+        "population_2018": 17231017,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Norway",
+        "country_code": "NOR",
+        "population_2018": 5314336,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Nepal",
+        "country_code": "NPL",
+        "population_2018": 28087871,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Nauru",
+        "country_code": "NRU",
+        "population_2018": 12704,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "New Zealand",
+        "country_code": "NZL",
+        "population_2018": 4885500,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Oman",
+        "country_code": "OMN",
+        "population_2018": 4829483,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Pakistan",
+        "country_code": "PAK",
+        "population_2018": 212215030,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Panama",
+        "country_code": "PAN",
+        "population_2018": 4176873,
+        "region": "Americas"
+    },
+    {
+        "country_name": "",
+        "country_code": "PCN",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Peru",
+        "country_code": "PER",
+        "population_2018": 31989256,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Philippines",
+        "country_code": "PHL",
+        "population_2018": 106651922,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Palau",
+        "country_code": "PLW",
+        "population_2018": 17907,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Papua New Guinea",
+        "country_code": "PNG",
+        "population_2018": 8606316,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Poland",
+        "country_code": "POL",
+        "population_2018": 37978548,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Puerto Rico",
+        "country_code": "PRI",
+        "population_2018": 3195153,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Korea, Dem. People’s Rep.",
+        "country_code": "PRK",
+        "population_2018": 25549819,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Portugal",
+        "country_code": "PRT",
+        "population_2018": 10281762,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Paraguay",
+        "country_code": "PRY",
+        "population_2018": 6956071,
+        "region": "Americas"
+    },
+    {
+        "country_name": "West Bank and Gaza",
+        "country_code": "PSE",
+        "population_2018": 4569087,
+        "region": "Asia"
+    },
+    {
+        "country_name": "French Polynesia",
+        "country_code": "PYF",
+        "population_2018": 277679,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Qatar",
+        "country_code": "QAT",
+        "population_2018": 2781677,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "REU",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "Romania",
+        "country_code": "ROU",
+        "population_2018": 19473936,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Russian Federation",
+        "country_code": "RUS",
+        "population_2018": 144478050,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Rwanda",
+        "country_code": "RWA",
+        "population_2018": 12301939,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Saudi Arabia",
+        "country_code": "SAU",
+        "population_2018": 33699947,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Sudan",
+        "country_code": "SDN",
+        "population_2018": 41801533,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Senegal",
+        "country_code": "SEN",
+        "population_2018": 15854360,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Singapore",
+        "country_code": "SGP",
+        "population_2018": 5638676,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "SGS",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "",
+        "country_code": "SHN",
+        "population_2018": "0",
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "SJM",
+        "population_2018": "0",
+        "region": "Europe"
+    },
+    {
+        "country_name": "Solomon Islands",
+        "country_code": "SLB",
+        "population_2018": 652858,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Sierra Leone",
+        "country_code": "SLE",
+        "population_2018": 7650154,
+        "region": "Africa"
+    },
+    {
+        "country_name": "El Salvador",
+        "country_code": "SLV",
+        "population_2018": 6420744,
+        "region": "Americas"
+    },
+    {
+        "country_name": "San Marino",
+        "country_code": "SMR",
+        "population_2018": 33785,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Somalia",
+        "country_code": "SOM",
+        "population_2018": 15008154,
+        "region": "Africa"
+    },
+    {
+        "country_name": "",
+        "country_code": "SPM",
+        "population_2018": "0",
+        "region": "Americas"
+    },
+    {
+        "country_name": "Serbia",
+        "country_code": "SRB",
+        "population_2018": 6982084,
+        "region": "Europe"
+    },
+    {
+        "country_name": "South Sudan",
+        "country_code": "SSD",
+        "population_2018": 10975920,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Sao Tome and Principe",
+        "country_code": "STP",
+        "population_2018": 211028,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Suriname",
+        "country_code": "SUR",
+        "population_2018": 575991,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Slovakia",
+        "country_code": "SVK",
+        "population_2018": 5447011,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Slovenia",
+        "country_code": "SVN",
+        "population_2018": 2067372,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Sweden",
+        "country_code": "SWE",
+        "population_2018": 10183175,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Eswatini",
+        "country_code": "SWZ",
+        "population_2018": 1136191,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Sint Maarten (Dutch part)",
+        "country_code": "SXM",
+        "population_2018": 40654,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Seychelles",
+        "country_code": "SYC",
+        "population_2018": 96762,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Syrian Arab Republic",
+        "country_code": "SYR",
+        "population_2018": 16906283,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Turks and Caicos Islands",
+        "country_code": "TCA",
+        "population_2018": 37665,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Chad",
+        "country_code": "TCD",
+        "population_2018": 15477751,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Togo",
+        "country_code": "TGO",
+        "population_2018": 7889094,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Thailand",
+        "country_code": "THA",
+        "population_2018": 69428524,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Tajikistan",
+        "country_code": "TJK",
+        "population_2018": 9100837,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "TKL",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Turkmenistan",
+        "country_code": "TKM",
+        "population_2018": 5850908,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Timor-Leste",
+        "country_code": "TLS",
+        "population_2018": 1267972,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Tonga",
+        "country_code": "TON",
+        "population_2018": 103197,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Trinidad and Tobago",
+        "country_code": "TTO",
+        "population_2018": 1389858,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Tunisia",
+        "country_code": "TUN",
+        "population_2018": 11565204,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Turkey",
+        "country_code": "TUR",
+        "population_2018": 82319724,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Tuvalu",
+        "country_code": "TUV",
+        "population_2018": 11508,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "",
+        "country_code": "TWN",
+        "population_2018": "0",
+        "region": "Asia"
+    },
+    {
+        "country_name": "Tanzania",
+        "country_code": "TZA",
+        "population_2018": 56318348,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Uganda",
+        "country_code": "UGA",
+        "population_2018": 42723139,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Ukraine",
+        "country_code": "UKR",
+        "population_2018": 44622516,
+        "region": "Europe"
+    },
+    {
+        "country_name": "",
+        "country_code": "UMI",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Uruguay",
+        "country_code": "URY",
+        "population_2018": 3449299,
+        "region": "Americas"
+    },
+    {
+        "country_name": "United States",
+        "country_code": "USA",
+        "population_2018": 327167434,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Uzbekistan",
+        "country_code": "UZB",
+        "population_2018": 32955400,
+        "region": "Asia"
+    },
+    {
+        "country_name": "",
+        "country_code": "VAT",
+        "population_2018": "0",
+        "region": "Europe"
+    },
+    {
+        "country_name": "Saint Vincent and the Grenadines",
+        "country_code": "VCT",
+        "population_2018": 110210,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Venezuela, RB",
+        "country_code": "VEN",
+        "population_2018": 28870195,
+        "region": "Americas"
+    },
+    {
+        "country_name": "British Virgin Islands",
+        "country_code": "VGB",
+        "population_2018": 29802,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Virgin Islands (U.S.)",
+        "country_code": "VIR",
+        "population_2018": 106977,
+        "region": "Americas"
+    },
+    {
+        "country_name": "Vietnam",
+        "country_code": "VNM",
+        "population_2018": 95540395,
+        "region": "Asia"
+    },
+    {
+        "country_name": "Vanuatu",
+        "country_code": "VUT",
+        "population_2018": 292680,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "",
+        "country_code": "WLF",
+        "population_2018": "0",
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Samoa",
+        "country_code": "WSM",
+        "population_2018": 196130,
+        "region": "Oceania"
+    },
+    {
+        "country_name": "Kosovo",
+        "country_code": "XKX",
+        "population_2018": 1845300,
+        "region": "Europe"
+    },
+    {
+        "country_name": "Yemen, Rep.",
+        "country_code": "YEM",
+        "population_2018": 28498687,
+        "region": "Asia"
+    },
+    {
+        "country_name": "South Africa",
+        "country_code": "ZAF",
+        "population_2018": 57779622,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Zambia",
+        "country_code": "ZMB",
+        "population_2018": 17351822,
+        "region": "Africa"
+    },
+    {
+        "country_name": "Zimbabwe",
+        "country_code": "ZWE",
+        "population_2018": 14439018,
+        "region": "Africa"
+    }
+]
