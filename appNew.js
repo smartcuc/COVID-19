@@ -2,8 +2,11 @@ const influx = require('influx');
 const axios = require('axios');
 const isoCode = require('./ccp.json');
 
+// Get INFLUX_HOST environment variable
+const influxhost = process.env.INFLUX_HOST;
+
 const influxdb = new influx.InfluxDB({
-    host: 'localhost',
+    host: influxhost,
     port: 8086,
     database: 'covid19',
     pool: {
