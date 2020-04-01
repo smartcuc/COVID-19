@@ -746,8 +746,8 @@
       "esLocationName": "country",
       "esMetric": "metric",
       "gridPos": {
-        "h": 9,
-        "w": 8,
+        "h": 10,
+        "w": 12,
         "x": 0,
         "y": 4
       },
@@ -848,9 +848,9 @@
       "decimals": 0,
       "esMetric": "Count",
       "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 8,
+        "h": 10,
+        "w": 12,
+        "x": 12,
         "y": 4
       },
       "hideEmpty": false,
@@ -939,108 +939,6 @@
       "valueName": "current"
     },
     {
-      "circleMaxSize": "2",
-      "circleMinSize": "1",
-      "colors": [
-        "#C4162A",
-        "#F2495C",
-        "#37872D"
-      ],
-      "datasource": "InfluxDB",
-      "decimals": 0,
-      "esMetric": "Count",
-      "gridPos": {
-        "h": 9,
-        "w": 8,
-        "x": 16,
-        "y": 4
-      },
-      "hideEmpty": false,
-      "hideZero": false,
-      "id": 17,
-      "initialZoom": "1",
-      "jsonUrl": "http://localhost:5000/locations",
-      "locationData": "table",
-      "mapCenter": "Europe",
-      "mapCenterLatitude": 46,
-      "mapCenterLongitude": 14,
-      "maxDataPoints": 1,
-      "mouseWheelZoom": false,
-      "options": {},
-      "showLegend": false,
-      "stickyLabels": true,
-      "tableQueryOptions": {
-        "geohashField": "geohash",
-        "labelField": "country",
-        "latitudeField": "lat",
-        "longitudeField": "long",
-        "metricField": "metric",
-        "queryType": "coordinates"
-      },
-      "targets": [
-        {
-          "alias": "$tag_location",
-          "groupBy": [
-            {
-              "params": [
-                "country"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "lat"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "long"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "Corona",
-          "orderByTime": "ASC",
-          "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Recovered\") FROM \"covid19\".\"autogen\".\"Corona\"  GROUP BY  \"lat\", \"long\"",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "Recovered"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "metric"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": "-1,1",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Recovered",
-      "type": "grafana-worldmap-panel",
-      "unitPlural": "Recovered",
-      "unitSingle": "",
-      "unitSingular": "Recovered",
-      "valueName": "current"
-    },
-    {
       "cacheTimeout": null,
       "colorBackground": false,
       "colorPostfix": false,
@@ -1064,7 +962,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 13
+        "y": 14
       },
       "id": 8,
       "interval": "",
@@ -1190,7 +1088,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 13
+        "y": 14
       },
       "id": 9,
       "interval": "",
@@ -1323,7 +1221,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 13
+        "y": 14
       },
       "id": 10,
       "interval": "",
@@ -1454,7 +1352,7 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 13
+        "y": 14
       },
       "id": 11,
       "interval": null,
@@ -1586,7 +1484,7 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 13
+        "y": 14
       },
       "id": 12,
       "interval": "",
@@ -1718,7 +1616,7 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 13
+        "y": 14
       },
       "id": 13,
       "interval": "",
@@ -1847,7 +1745,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 19,
@@ -2001,7 +1899,7 @@
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 29
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 21,
@@ -2127,7 +2025,7 @@
         "h": 6,
         "w": 6,
         "x": 6,
-        "y": 29
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 22,
@@ -2253,7 +2151,7 @@
         "h": 6,
         "w": 6,
         "x": 12,
-        "y": 29
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2379,7 +2277,7 @@
         "h": 6,
         "w": 6,
         "x": 18,
-        "y": 29
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2518,7 +2416,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 25,
@@ -2761,7 +2659,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 35
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 26,
@@ -3005,7 +2903,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 35
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 29,
@@ -3248,7 +3146,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 28,
@@ -3491,7 +3389,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 41
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 30,
@@ -3735,7 +3633,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 41
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 27,
