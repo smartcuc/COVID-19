@@ -8,6 +8,7 @@ In addition, I would recommend using appNew.js. The reason for that is the issue
 Clean up and adding fields of appNew.js and ccp.json. The db structure has been extended by daily new conformed, deaths, and recovered as well added ISO 3166 alpha-2, lat, long, and geohash.
 
 fields:
+
   Confirmed: influx.FieldType.FLOAT,
   Deaths: influx.FieldType.FLOAT,
   Recovered: influx.FieldType.FLOAT,
@@ -16,7 +17,8 @@ fields:
   RecoveredNew: influx.FieldType.FLOAT,
   Population: influx.FieldType.FLOAT
 
-tags: 
+tags:
+
   'isocode_2',
   'isocode',
   'latitude',
