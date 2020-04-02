@@ -9,23 +9,13 @@ Clean up and adding fields of appNew.js and ccp.json. The db structure has been 
 
 fields:
 
-  Confirmed: influx.FieldType.FLOAT,
-  Deaths: influx.FieldType.FLOAT,
-  Recovered: influx.FieldType.FLOAT,
-  ConfirmedNew: influx.FieldType.FLOAT,
-  DeathsNew: influx.FieldType.FLOAT,
-  RecoveredNew: influx.FieldType.FLOAT,
-  Population: influx.FieldType.FLOAT
-
+  Confirmed, Deaths, Recovered, ConfirmedNew, DeathsNew, RecoveredNew,Population
+  
 tags:
 
-  'isocode_2',
-  'isocode',
-  'latitude',
- 	'longitude',
-  'geohash',
-  'country',
- 	'region'
+  isocode_2, 'isocode, latitude, longitude, geohash, country, region
             
+
+
 
 # Stay safe and keep healthy - Ruediger
