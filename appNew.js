@@ -2,8 +2,11 @@ const influx = require('influx');
 const axios = require('axios');
 const isoCode = require('./ccp.json');
 
+// Define geohash precision of supplied lat/lon
+const precision = 12; // set to maximum
+
 // Get INFLUX_HOST environment variable
-const influxhost = process.env.INFLUX_HOST;
+const influxhost = process.env.INFLUX_HOST || 'localhost';
 
 const influxdb = new influx.InfluxDB({
     host: influxhost,
@@ -20,10 +23,17 @@ const influxdb = new influx.InfluxDB({
                 Confirmed: influx.FieldType.FLOAT,
                 Deaths: influx.FieldType.FLOAT,
                 Recovered: influx.FieldType.FLOAT,
+                ConfirmedNew: influx.FieldType.FLOAT,
+                DeathsNew: influx.FieldType.FLOAT,
+                RecoveredNew: influx.FieldType.FLOAT,
                 Population: influx.FieldType.FLOAT
             },
             tags: [
+                'isocode_2',
                 'isocode',
+                'latitude',
+                'longitude',
+                'geohash',
                 'country',
                 'region'
             ],
@@ -33,33 +43,70 @@ const influxdb = new influx.InfluxDB({
 });
 
 
+function getGeoHash(lat, lon) {
+
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+
+    let idx = 0; // index into base32 map
+    let bit = 0; // each char holds 5 bits
+    let evenBit = true;
+    let geohash = '';
+
+    let latMin = -90, latMax = 90;
+    let lonMin = -180, lonMax = 180;
+
+    while (geohash.length < precision) {
+        if (evenBit) {
+            // bisect E-W longitude
+            const lonMid = (lonMin + lonMax) / 2;
+            if (lon >= lonMid) {
+                idx = idx * 2 + 1;
+                lonMin = lonMid;
+            } else {
+                idx = idx * 2;
+                lonMax = lonMid;
+            }
+        } else {
+            // bisect N-S latitude
+            const latMid = (latMin + latMax) / 2;
+            if (lat >= latMid) {
+                idx = idx * 2 + 1;
+                latMin = latMid;
+            } else {
+                idx = idx * 2;
+                latMax = latMid;
+            }
+        }
+        evenBit = !evenBit;
+
+        if (++bit == 5) {
+            // 5 bits gives us a character: append it and start over
+            geohash += base32.charAt(idx);
+            bit = 0;
+            idx = 0;
+        }
+    }
+
+    return geohash;
+
+}
+
 function getCountryData(country) {
 
-    let isoCodeCountry = '';
+    let isoCode_2, isoCodeCountry, geoHash = '';
+    let lat, long, population = 0;
 
     switch (country) {
         case 'United States':
             isoCodeCountry = 'USA';
             break;
 
-        case 'Iran':
-            isoCodeCountry = 'IRN';
-            break;
-
         case 'South Korea':
             isoCodeCountry = 'PRK';
             break;
 
-        case 'Czech Republic':
-            isoCodeCountry = 'CZE';
-            break;
-
         case 'Russia':
             isoCodeCountry = 'RUS';
-            break;
-
-        case 'Taiwan':
-            isoCodeCountry = 'TWN';
             break;
 
         case 'Macedonia':
@@ -70,16 +117,8 @@ function getCountryData(country) {
             isoCodeCountry = 'MDA';
             break;
 
-        case 'Vietnam':
-            isoCodeCountry = 'VNM';
-            break;
-
         case 'Brunei':
             isoCodeCountry = 'BRN';
-            break;
-
-        case 'Venezuela':
-            isoCodeCountry = 'VEN';
             break;
 
         case 'Ivory Coast':
@@ -91,10 +130,6 @@ function getCountryData(country) {
             isoCodeCountry = 'PSE';
             break;
 
-        case 'Bolivia':
-            isoCodeCountry = 'BOL';
-            break;
-
         case 'Congo (Kinshasa)':
             isoCodeCountry = 'COD';
             break;
@@ -103,40 +138,12 @@ function getCountryData(country) {
             isoCodeCountry = 'COG';
             break;
 
-        case 'Kosovo':
-            isoCodeCountry = 'XKX';
-            break;
-
-        case 'Tanzania':
-            isoCodeCountry = 'TZA';
-            break;
-
-        case 'Macau':
-            isoCodeCountry = 'MAC';
-            break;
-
         case 'Burma':
             isoCodeCountry = 'MMR';
             break;
 
-        case 'Laos':
-            isoCodeCountry = 'LAO';
-            break;
-
-        case 'Vatican City':
-            isoCodeCountry = 'VAT';
-            break;
-
         case 'Cape Verde':
             isoCodeCountry = 'CPV';
-            break;
-
-        case 'Syria':
-            isoCodeCountry = 'SYR';
-            break;
-
-        case 'Reunion':
-            isoCodeCountry = 'REU';
             break;
 
         case 'St. Martin':
@@ -147,10 +154,6 @@ function getCountryData(country) {
             isoCodeCountry = 'CYM';
             break;
 
-        case 'Curacao':
-            isoCodeCountry = 'CUW';
-            break;
-
         case 'East Timor':
             isoCodeCountry = 'TLS';
             break;
@@ -159,14 +162,10 @@ function getCountryData(country) {
             isoCodeCountry = 'GBR';
             break;
 
-        case 'Saint Barthelemy':
-            isoCodeCountry = 'BLM';
-            break;
-
-        case 'The Gambia':
+        case "The Gambia":
+        case 'Gambia':
             isoCodeCountry = 'GMB';
             break;
-
 
         case 'MS Zaandam':
         case 'Others':
@@ -177,24 +176,32 @@ function getCountryData(country) {
 
         default:
             isoCodeCountry = isoCode.find(cname => cname.country_name === country);
-            isoCodeCountry = Object.values(isoCodeCountry)[1];
+            isoCodeCountry = Object.values(isoCodeCountry)[2];
             break;
     }
 
-    let countryData = isoCode.find(cname => cname.country_code === isoCodeCountry);
+    let countryData = isoCode.find(cname => cname.country_code_3 === isoCodeCountry);
     let region = "";
 
     if (isoCodeCountry != 'N/A') {
 
-        population = Object.values(countryData)[2];
-        region = Object.values(countryData)[3];
+        isoCode_2 = Object.values(countryData)[1];
+        lat = Object.values(countryData)[3];
+        long = Object.values(countryData)[4];
+        region = Object.values(countryData)[5];
+        population = Object.values(countryData)[6];
+        geoHash = getGeoHash(lat, long);
 
     } else {
-        population = '0';
+        isoCode_2 = 'N/A';
+        lat = 0;
+        long = 0;
+        geoHash = 'N/A';
+        population = 0;
         region = 'N/A';
     }
 
-    return ([isoCodeCountry, population, region]);
+    return ([country, isoCode_2, isoCodeCountry, lat, long, geoHash, region, population]);
 
 }
 
@@ -233,19 +240,30 @@ async function Covid() {
             const deaths = Object.values(result[i].dates)[j].cumulative.deaths;
             const recovered = Object.values(result[i].dates)[j].cumulative.recoveries;
 
+            const confirmedNew = Object.values(result[i].dates)[j].new.cases;
+            const deathsfNew = Object.values(result[i].dates)[j].new.deaths;
+            const recoveredNew = Object.values(result[i].dates)[j].new.recoveries;
+
             series.push(
                 {
                     measurement: 'CoronaNew',
                     tags: {
-                        isocode: countryData[0],
+                        isocode_2: countryData[1],
+                        isocode: countryData[2],
+                        latitude: countryData[3],
+                        longitude: countryData[4],
+                        geohash: countryData[5],
                         country: country,
-                        region: countryData[2],
+                        region: countryData[6],
                     },
                     fields: {
                         Confirmed: confirmed,
                         Deaths: deaths,
                         Recovered: recovered,
-                        Population: countryData[1],
+                        ConfirmedNew: confirmedNew,
+                        DeathsNew: deathsfNew,
+                        RecoveredNew: recoveredNew,
+                        Population: countryData[7],
                     },
                     timestamp: timestemp
                 });
