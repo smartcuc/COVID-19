@@ -9,7 +9,7 @@ Clean up and adding fields of appNew.js and ccp.json. The db structure has been 
 
 fields:
 
-  Confirmed, Deaths, Recovered, ConfirmedNew, DeathsNew, RecoveredNew,Population
+  Confirmed, Deaths, Recovered, ConfirmedNew, DeathsNew, RecoveredNew, Population
   
 tags:
 
