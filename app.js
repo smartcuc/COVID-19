@@ -1,6 +1,7 @@
 const papa = require('papaparse');
 const influx = require('influx');
 const axios = require('axios');
+
 const HttpsProxyAgent = require('https-proxy-agent');
 const axiosDefaultConfig = {
     proxy: false,
@@ -8,7 +9,7 @@ const axiosDefaultConfig = {
 };
 
 // Get INFLUX_HOST environment variable
-const influxhost = process.env.INFLUX_HOST;
+const influxhost = process.env.INFLUX_HOST || 'localhost';
 
 const influxdb = new influx.InfluxDB({
     host: influxhost,
@@ -38,44 +39,17 @@ const influxdb = new influx.InfluxDB({
 });
 
 
-const statType = ['Confirmed', 'Deaths'];
+const statType = ['Confirmed', 'Deaths', 'Recovered'];
 
 let covidConfirmed;
 let covidDeaths;
 let covidRecovered;
 
 function getCovidData(item) {
-    const axios = require ('axios').create(axiosDefaultConfig);
+
     const url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_" + item.toLowerCase() + "_global.csv";
+
     return axios.get(url);
-}
-
-async function getCovid() {
-
-    for (let i = 0; i < statType.length; i++) {
-
-        const covidDaten = await getCovidData(statType[i]);
-
-        switch (statType[i]) {
-            case 'Confirmed':
-                covidConfirmed = convertHeader(covidDaten.data);
-                break;
-
-            case 'Deaths':
-                covidDeaths = convertHeader(covidDaten.data);
-                break;
-
-            case 'Recovered':
-                covidRecovered = convertHeader(covidDaten.data);
-                break;
-
-            default:
-                break;
-
-        }
-
-    }
-
 }
 
 
@@ -108,40 +82,62 @@ function convertHeader(convDaten) {
 }
 
 
-function covidDB() {
+
+async function getCovid() {
+
+    for (let i = 0; i < statType.length; i++) {
+
+        const covidDaten = await getCovidData(statType[i]);
+
+        switch (statType[i]) {
+            case 'Confirmed':
+                covidConfirmed = convertHeader(covidDaten.data);
+                prepDB(covidConfirmed, 'Confirmed');
+                break;
+
+            case 'Deaths':
+                covidDeaths = convertHeader(covidDaten.data);
+                prepDB(covidDeaths, 'Deaths');
+                break;
+
+            case 'Recovered':
+                covidRecovered = convertHeader(covidDaten.data);
+                prepDB(covidRecovered, 'Recovered');
+                break;
+
+            default:
+                break;
+
+        }
+
+    }
+
+}
+
+function prepDB(covidDatenPrep, type) {
+
     const series = [];
-    const anzahlDatenSatz = Object.keys(covidConfirmed).length;
-    const anzahlEintrag = Object.keys(Object.keys(covidConfirmed[0])).length;
+    const countLines = Object.keys(covidDatenPrep).length;
+    const countRows = Object.keys(Object.keys(covidDatenPrep[0])).length;
 
-    for (let i = 0; i < anzahlDatenSatz - 1; i++) {
+    for (let i = 0; i < countLines - 1; i++) {
 
-        const zeilenConfirmed = Object.entries(covidConfirmed[i]);
-        const zeilenDeaths = Object.entries(covidDeaths[i]);
+        const line = Object.entries(covidDatenPrep[i]);
 
-        let state = zeilenConfirmed[0][1];
-        let country = zeilenConfirmed[1][1];
-        let lat = zeilenConfirmed[2][1];
-        let long = zeilenConfirmed[3][1];
+        let state = line[0][1];
+        let country = line[1][1];
+        let lat = line[2][1];
+        let long = line[3][1];
 
         if (state == null) {
             state = "N/A";
         }
 
-        for (let j = 4; j < anzahlEintrag; j++) {
-            let zeileConfirmed = Object.values(zeilenConfirmed[j])
-            let zeileDeaths = Object.values(zeilenDeaths[j])
+        for (let j = 4; j < countRows; j++) {
 
-            let timestemp = zeileConfirmed[0];
-            let confirmed = zeileConfirmed[1];
-            let deaths = zeileDeaths[1];
-
-            if (confirmed == undefined) {
-                confirmed = Object.values(zeilenConfirmed[j - 1])[1];
-            }
-
-            if (deaths == undefined) {
-                deaths = Object.values(zeilenDeaths[j - 1])[1];
-            }
+            let lineItem = Object.values(line[j])
+            let timestemp = lineItem[0];
+            let lineCount = lineItem[1];
 
             series.push(
                 {
@@ -153,13 +149,11 @@ function covidDB() {
                         long: long
                     },
                     fields: {
-                        Confirmed: confirmed,
-                        Deaths: deaths,
+                        [type]: lineCount,
+
                     },
                     timestamp: timestemp
                 });
-
-
 
         }
 
@@ -169,23 +163,14 @@ function covidDB() {
         console.error("Error :", error, "Stack:", error.stack)
     });
 
-
 }
 
 
 async function Covid() {
 
-    influxdb.getDatabaseNames().then(names => {
-        if (!names.includes('covid19')) {
-            influxdb.createDatabase('covid19');
-        }
-    })
-
     const result = await getCovid();
-    covidDB()
 
 }
 
 
 Covid();
-
