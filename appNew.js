@@ -7,9 +7,13 @@ const precision = 12; // set to maximum
 
 // Get INFLUX_HOST environment variable
 const influxhost = process.env.INFLUX_HOST || 'localhost';
+const influxUser = process.env.INFLUX_USER;
+const influxPass = process.env.INFLUX_PASS;
 
 const influxdb = new influx.InfluxDB({
     host: influxhost,
+    username: influxUser,
+    password: influxPass,
     port: 8086,
     database: 'covid19',
     pool: {
