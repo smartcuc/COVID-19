@@ -6,6 +6,7 @@ const isoCode = require('./ccp.json');
 const precision = 12; // set to maximum
 
 // Get INFLUX_HOST environment variable
+const scheduleH = process.env.SCHEDULE_H || 0;
 const influxhost = process.env.INFLUX_HOST || 'localhost';
 
 const influxdb = new influx.InfluxDB({
@@ -224,7 +225,9 @@ async function getCovid() {
 
 
 async function Covid() {
-
+    console.log(new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
+        + ' - Running update');
+    
     const series = [];
     const result = await getCovid();
 
@@ -283,3 +286,7 @@ async function Covid() {
 
 Covid();
 
+if (scheduleH != 0) {
+    console.log('Entering schedule update mode, hours: ' + scheduleH);
+    setInterval(Covid, scheduleH * 3600000);
+}
