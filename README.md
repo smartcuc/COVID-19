@@ -27,3 +27,32 @@ View per Country:
 ![Image View per Country](https://github.com/smartcuc/COVID-19/blob/master/Dashboards/Per_Country.PNG)
 
 # Stay safe and keep healthy - Ruediger
+
+## Use Docker container
+
+### Build your own image
+
+```shell
+docker build -t covid-19-influxdb https://github.com/smartcuc/COVID-19.git
+```
+
+### Start container
+
+#### With your own build
+
+```shell
+docker run --name covid-19 -e "INFLUX_HOST=infludb.host" covid-19-influxdb
+```
+
+#### With Docker hub image
+
+```shell
+docker run --name covid-19 -e "INFLUX_HOST=infludb.host" verbalinsurection/covid-19-influxdb
+```
+
+### Available environment variable
+
+* INFLUX_HOST: [Mandatory] Influxdb host address
+* INFLUX_USER: [Optionnal] User for Influxdb
+* INFLUX_PASS: [Optionnal] Password for Influxdb
+* SCHEDULE_H: [Optionnal] Schedule the datas update of the data. Without it, will run once.
