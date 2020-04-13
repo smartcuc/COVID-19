@@ -5,7 +5,7 @@ As the source is being updated once a day, you should run this app three times a
 In addition, I would recommend using appNew.js. The reason for that is the issue with the recovered figures from JHU.
 
 # Update 04 April 2020
-Clean up and adding fields of appNew.js and ccp.json. The db structure has been extended by daily new conformed, deaths, and recovered as well added ISO 3166 alpha-2, lat, long, and geohash.
+Clean up and adding fields of appNew.js and ccp.json. The db structure has been extended by daily new confirmed, deaths, and recovered as well added ISO 3166 alpha-2, lat, long, and geohash.
 
 fields:
 
