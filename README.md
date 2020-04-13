@@ -13,7 +13,7 @@ fields:
   
 tags:
 
-  isocode_2, 'isocode, latitude, longitude, geohash, country, region
+  isocode_2, isocode, latitude, longitude, geohash, country, region
             
 
 Grafana Dashboard Export.
