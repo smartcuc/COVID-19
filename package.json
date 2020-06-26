@@ -15,7 +15,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.19.2",
-    "influx": "^5.5.1",
+    "influx": "^5.5.2",
     "package.json": "^2.0.1",
     "papaparse": "^5.2.0"
   },
