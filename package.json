@@ -14,7 +14,7 @@
   "author": "Ruediger Koenen",
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "influx": "^5.5.1",
     "package.json": "^2.0.1",
     "papaparse": "^5.1.1"
