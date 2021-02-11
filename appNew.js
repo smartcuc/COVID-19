@@ -238,47 +238,47 @@ async function Covid() {
     for (let i = 0; i < result.length; i++) {
 
         const country = Object.values(result[i].country)[1];
-        const countryData = getCountryData(country);
+        try {
+            const countryData = getCountryData(country);
 
-        for (let j = 0; j < Object.values(result[i].dates).length; j++) {
+            for (let j = 0; j < Object.values(result[i].dates).length; j++) {
 
-            const timestemp = new Date(Object.keys(result[i].dates)[j]).getTime() + (2 * 3600 * 1000);
-            const confirmed = Object.values(result[i].dates)[j].cumulative.cases;
-            const deaths = Object.values(result[i].dates)[j].cumulative.deaths;
-            const recovered = Object.values(result[i].dates)[j].cumulative.recoveries;
+                const timestemp = new Date(Object.keys(result[i].dates)[j]).getTime() + (2 * 3600 * 1000);
+                const confirmed = Object.values(result[i].dates)[j].cumulative.cases;
+                const deaths = Object.values(result[i].dates)[j].cumulative.deaths;
+                const recovered = Object.values(result[i].dates)[j].cumulative.recoveries;
 
-            const confirmedNew = Object.values(result[i].dates)[j].new.cases;
-            const deathsfNew = Object.values(result[i].dates)[j].new.deaths;
-            const recoveredNew = Object.values(result[i].dates)[j].new.recoveries;
+                const confirmedNew = Object.values(result[i].dates)[j].new.cases;
+                const deathsfNew = Object.values(result[i].dates)[j].new.deaths;
+                const recoveredNew = Object.values(result[i].dates)[j].new.recoveries;
 
-            series.push(
-                {
-                    measurement: 'CoronaNew',
-                    tags: {
-                        isocode_2: countryData[1],
-                        isocode: countryData[2],
-                        latitude: countryData[3],
-                        longitude: countryData[4],
-                        geohash: countryData[5],
-                        country: country,
-                        region: countryData[6],
-                    },
-                    fields: {
-                        Confirmed: confirmed,
-                        Deaths: deaths,
-                        Recovered: recovered,
-                        ConfirmedNew: confirmedNew,
-                        DeathsNew: deathsfNew,
-                        RecoveredNew: recoveredNew,
-                        Population: countryData[7],
-                    },
-                    timestamp: timestemp
-                });
-
-
+                series.push(
+                    {
+                        measurement: 'CoronaNew',
+                        tags: {
+                            isocode_2: countryData[1],
+                            isocode: countryData[2],
+                            latitude: countryData[3],
+                            longitude: countryData[4],
+                            geohash: countryData[5],
+                            country: country,
+                            region: countryData[6],
+                        },
+                        fields: {
+                            Confirmed: confirmed,
+                            Deaths: deaths,
+                            Recovered: recovered,
+                            ConfirmedNew: confirmedNew,
+                            DeathsNew: deathsfNew,
+                            RecoveredNew: recoveredNew,
+                            Population: countryData[7],
+                        },
+                        timestamp: timestemp
+                    });
+            }
+        } catch (error) {
+              console.error(error);
         }
-
-
     }
 
     influxdb.writeMeasurement('CoronaNew', series, { database: 'covid19', precision: 'ms' }).catch(error => {
