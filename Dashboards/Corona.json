@@ -496,7 +496,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT sum(Confirmed)-sum(Recovered)-sum(Deaths) FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null)\n",
+          "query": "SELECT sum(Confirmed)-sum(Recovered)-sum(Deaths) FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null)\n",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -617,7 +617,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
           "query": "SELECT sum(\"Deaths\") *100 / sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
@@ -744,7 +744,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Recovered\") * 100 / sum(\"Confirmed\" FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null)",
+          "query": "SELECT sum(\"Recovered\") * 100 / sum(\"Confirmed\" FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -850,10 +850,10 @@
               "type": "tag"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT last(\"Confirmed\") AS \"metric\" FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY \"country\", \"lat\", \"long\"",
+          "query": "SELECT last(\"Confirmed\") AS \"metric\" FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY \"country\", \"lat\", \"long\"",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "table",
@@ -952,10 +952,10 @@
               "type": "tag"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT last(\"Deaths\") AS \"metric\" FROM \"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h), \"country\", \"lat\", \"long\"",
+          "query": "SELECT last(\"Deaths\") AS \"metric\" FROM \"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h), \"country\", \"lat\", \"long\"",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "table",
@@ -1165,7 +1165,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT 100* sum(Confirmed)/ 7781492808 FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null)",
+          "query": "SELECT 100* sum(Confirmed)/ 7781492808 FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1288,10 +1288,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT last(\"Confirmed\")  * 100 / 82927922  FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h) fill(null)",
+          "query": "SELECT last(\"Confirmed\")  * 100 / 82927922  FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1421,10 +1421,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT last(\"Deaths\")  * 100 / 82927922  FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h) fill(null)",
+          "query": "SELECT last(\"Deaths\")  * 100 / 82927922  FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1552,10 +1552,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT 100*sum(\"Recovered\")/sum(Confirmed) FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null)\n",
+          "query": "SELECT 100*sum(\"Recovered\")/sum(Confirmed) FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null)\n",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1687,7 +1687,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\")  * 100 / 1392730000  FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null), country(Cina)",
+          "query": "SELECT sum(\"Confirmed\")  * 100 / 1392730000  FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null), country(Cina)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1819,7 +1819,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\")  * 100 / 1392730000  FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h) fill(null), country(Cina)",
+          "query": "SELECT sum(\"Confirmed\")  * 100 / 1392730000  FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(null), country(Cina)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1958,7 +1958,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
           "query": " SELECT sum(\"Confirmed\") AS \"Confirmed\", sum(\"Deaths\") AS \"Deaths\", sum(\"Recovered\") AS \"Recovered\", \n100*sum(Deaths)/sum(Confirmed) as \"Fatality_Ratio\", 100*sum(Recovered)/sum(Confirmed) as \"Recovery_Ratio\", \nsum(\"Confirmed\")-sum(Deaths)-sum(Recovered) as \"Remaining\" FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h) fill(previous)",
@@ -2475,7 +2475,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") -sum(Death)-sum(Recovered) FROM \"covid19\".\"autogen\".\"Corona\" WHERE $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") -sum(Death)-sum(Recovered) FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2616,7 +2616,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2859,7 +2859,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3102,7 +3102,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3345,7 +3345,7 @@
           "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3551,10 +3551,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
-          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"Corona\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
+          "query": "SELECT sum(\"Confirmed\") FROM \"covid19\".\"autogen\".\"CoronaNew\" WHERE (\"country\" = 'Germany') AND $timeFilter GROUP BY time(24h), \"country\" fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3602,7 +3602,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
           "query": "",
@@ -3653,7 +3653,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "Corona",
+          "measurement": "CoronaNew",
           "orderByTime": "ASC",
           "policy": "covid19\".\"autogen",
           "query": "",
@@ -3694,7 +3694,26 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "influxdb",
+          "value": "influxdb"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "DS_CORONA",
+        "options": [],
+        "query": "influxdb",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      }
+    ]
   },
   "time": {
     "from": "now-30d",
