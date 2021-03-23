@@ -2266,5 +2266,14 @@
         "longitude": 29.154857,
         "region": "Africa",
         "population_2018": 14439018
+    },
+    {
+        "country_name": "Micronesia",
+        "country_code_2": "FM",
+        "country_code_3": "FSM",
+        "latitude": 6.8874813,
+        "longitude": 158.2150717,
+        "region": "Oceania",
+        "population_2018": 112640
     }
 ]
