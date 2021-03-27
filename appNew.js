@@ -27,11 +27,16 @@ const influxdb = new influx.InfluxDB({
             fields: {
                 Confirmed: influx.FieldType.FLOAT,
                 Deaths: influx.FieldType.FLOAT,
-                Recovered: influx.FieldType.FLOAT,
+                // Recovered: influx.FieldType.FLOAT,
                 ConfirmedNew: influx.FieldType.FLOAT,
                 DeathsNew: influx.FieldType.FLOAT,
-                RecoveredNew: influx.FieldType.FLOAT,
-                Population: influx.FieldType.FLOAT
+                // RecoveredNew: influx.FieldType.FLOAT,
+                Population: influx.FieldType.FLOAT,
+                Vaccinated: influx.FieldType.FLOAT,
+                VaccinatedNew: influx.FieldType.FLOAT,
+                ReproductionRate: influx.FieldType.FLOAT,
+                HospPatients: influx.FieldType.FLOAT,
+                IcuPatients: influx.FieldType.FLOAT
             },
             tags: [
                 'isocode_2',
@@ -181,7 +186,11 @@ function getCountryData(country) {
 
         default:
             isoCodeCountry = isoCode.find(cname => cname.country_name === country);
-            isoCodeCountry = Object.values(isoCodeCountry)[2];
+            if (!isoCodeCountry) {
+                isoCodeCountry = 'N/A';
+            } else {
+                isoCodeCountry = Object.values(isoCodeCountry)[2];
+            }
             break;
     }
 
@@ -213,7 +222,8 @@ function getCountryData(country) {
 
 function getCovidData() {
 
-    const url = "https://coviddata.github.io/coviddata/v1/countries/stats.json";
+    // const url = "https://coviddata.github.io/coviddata/v1/countries/stats.json";
+    const url = "https://covid.ourworldindata.org/data/owid-covid-data.json";
 
     return axios.get(url);
 }
@@ -234,47 +244,54 @@ async function Covid() {
     
     const series = [];
     const result = await getCovid();
-
-    for (let i = 0; i < result.length; i++) {
-
-        const country = Object.values(result[i].country)[1];
+    for (var countKey in result) {
+        const country = result[countKey].location;
         try {
             const countryData = getCountryData(country);
+            if (countryData[1] != 'N/A') {
+                for (var dataKey in result[countKey]['data']) {
+                    const timestemp = new Date(result[countKey]['data'][dataKey].date).getTime() + (2 * 3600 * 1000);
+                    const confirmed = result[countKey]['data'][dataKey].total_cases;
+                    const deaths = result[countKey]['data'][dataKey].total_deaths;
+                    // const recovered = result[countKey]['data'][dataKey].;
+                    const confirmedNew = result[countKey]['data'][dataKey].new_cases;
+                    const deathsfNew = result[countKey]['data'][dataKey].new_deaths;
+                    const peopleVaccinated = result[countKey]['data'][dataKey].people_vaccinated;
+                    const newVaccinations = result[countKey]['data'][dataKey].new_vaccinations;
+                    const reproductionRate = result[countKey]['data'][dataKey].reproduction_rate;
+                    const hospPatients = result[countKey]['data'][dataKey].hosp_patients;
+                    const icuPatients = result[countKey]['data'][dataKey].icu_patients;
+                    // const recoveredNew = result[countKey]['data'][dataKey].;
 
-            for (let j = 0; j < Object.values(result[i].dates).length; j++) {
-
-                const timestemp = new Date(Object.keys(result[i].dates)[j]).getTime() + (2 * 3600 * 1000);
-                const confirmed = Object.values(result[i].dates)[j].cumulative.cases;
-                const deaths = Object.values(result[i].dates)[j].cumulative.deaths;
-                const recovered = Object.values(result[i].dates)[j].cumulative.recoveries;
-
-                const confirmedNew = Object.values(result[i].dates)[j].new.cases;
-                const deathsfNew = Object.values(result[i].dates)[j].new.deaths;
-                const recoveredNew = Object.values(result[i].dates)[j].new.recoveries;
-
-                series.push(
-                    {
-                        measurement: 'CoronaNew',
-                        tags: {
-                            isocode_2: countryData[1],
-                            isocode: countryData[2],
-                            latitude: countryData[3],
-                            longitude: countryData[4],
-                            geohash: countryData[5],
-                            country: country,
-                            region: countryData[6],
-                        },
-                        fields: {
-                            Confirmed: confirmed,
-                            Deaths: deaths,
-                            Recovered: recovered,
-                            ConfirmedNew: confirmedNew,
-                            DeathsNew: deathsfNew,
-                            RecoveredNew: recoveredNew,
-                            Population: countryData[7],
-                        },
-                        timestamp: timestemp
-                    });
+                    series.push(
+                        {
+                            measurement: 'CoronaNew',
+                            tags: {
+                                isocode_2: countryData[1],
+                                isocode: countryData[2],
+                                latitude: countryData[3],
+                                longitude: countryData[4],
+                                geohash: countryData[5],
+                                country: country,
+                                region: countryData[6],
+                            },
+                            fields: {
+                                Confirmed: confirmed,
+                                Deaths: deaths,
+                                // Recovered: recovered,
+                                ConfirmedNew: confirmedNew,
+                                DeathsNew: deathsfNew,
+                                // RecoveredNew: recoveredNew,
+                                Population: countryData[7],
+                                Vaccinated: peopleVaccinated,
+                                VaccinatedNew: newVaccinations,
+                                ReproductionRate: reproductionRate,
+                                HospPatients: hospPatients,
+                                IcuPatients: icuPatients,
+                            },
+                            timestamp: timestemp
+                        });
+                }
             }
         } catch (error) {
               console.error(error);
